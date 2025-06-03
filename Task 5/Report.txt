@@ -1,0 +1,56 @@
+Cybersecurity Internship - Task 5: Network Traffic Capture & Analysis using Wireshark
+
+Objective:
+
+Capture live network traffic using Wireshark and analyze different types of protocols to gain hands-on experience in packet inspection and protocol filtering.
+
+Tools Used:
+
+- Kali Linux
+- Wireshark (GUI network protocol analyzer)
+
+Steps Followed:
+
+1. Opened Wireshark on Kali Linux.
+2. Selected the active network interface (e.g., wlan0 or eth0).
+3. Started live packet capture.
+4. Generated network traffic:
+   - Used `ping google.com` to produce ICMP and DNS traffic.
+   - Accessed `http://example.com` via Firefox and `curl`.
+5. Stopped the capture after ~1 minute.
+6. Applied filters to view specific protocols:
+   - "dns" to see domain lookups
+   - "http" to inspect web traffic
+   - "tcp" to analyze connection setup and data transfer
+
+Protocols Identified:
+
+1. **DNS (Domain Name System)**  
+   - Used for resolving domain names to IP addresses  
+   - Observed A record queries and responses  
+
+2. **HTTP (Hypertext Transfer Protocol)**  
+   - Used for web communication  
+   - Observed GET request to example.com and 200 OK response  
+
+3. **TCP (Transmission Control Protocol)**  
+   - Underlying transport protocol for HTTP and DNS  
+   - Observed TCP 3-way handshake (SYN, SYN-ACK, ACK)
+
+Packet Details:
+
+- DNS query: `A` record for `google.com` with response IP.
+- HTTP GET request to `/` on `example.com`, with 200 OK status.
+- TCP packet sequence with proper flags (SYN, ACK, etc.).
+
+Outcome:
+
+- Understood how to capture and filter live traffic.
+- Learned to identify and analyze different network protocols.
+- Gained insight into how protocols work at the packet level.
+
+Files Included:
+
+- `network_capture.pcap` - The captured traffic file.
+- `README.md` - GitHub summary of the task.
+- `report.txt` - This detailed report.
